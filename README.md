@@ -109,7 +109,6 @@ php one.php upload:file demo.zip /test/d.zip
 ```
     'root_path' => '' 
 ```  
-> nginx图片404问题,参考https://github.com/donwa/oneindex/issues/14
   
 **缓存时间:**  
 初步测试直链过期时间为一小时,默认设置为： 
@@ -131,10 +130,11 @@ php one.php upload:file demo.zip /test/d.zip
 A:不需要，全局管理员开出来的子账号就可以，不过该域名在office365必须要有管理员  
 
 **Q:文件上传后，不能即时在程序页面显示出来？**  
-A:有缓存，可以在config/base.php设置缓存时间。  
+A:有缓存，可以在config/base.php设置缓存时间. 或在后台刷新缓存
 
-
-**Q:能否使用自己的client_id、client_secret？**  
-A:参考：https://github.com/donwa/oneindex/wiki/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B7%B1%E7%9A%84client_id%E3%80%81client_secret  
-
-> 感谢 moeclub 提供的 client_id 和 client_secret,以实现一键绑定
+![](http://pan.ilt.me/Images/preview/1.png)
+![](http://pan.ilt.me/Images/preview/2.png)
+![](http://pan.ilt.me/Images/preview/3.png)
+![](http://pan.ilt.me/Images/preview/4.png)
+![](http://pan.ilt.me/Images/preview/5.png)
+![](http://pan.ilt.me/Images/preview/6.png)
