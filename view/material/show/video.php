@@ -25,7 +25,8 @@ const dp = new DPlayer({
 	    url: '<?php e($item['downloadUrl']);?>',
 	    pic: '<?php @e($item['thumb'].'&width=176&height=176');?>',
 	    type: 'auto'
-	}
+	},
+    autoplay:true
 });
 </script>
 <a href="<?php e($url);?>" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a>
