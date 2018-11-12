@@ -141,6 +141,7 @@ class AdminController{
 			config('client_secret',$_POST['client_secret']);
 			config('client_id',$_POST['client_id']);
 			config('redirect_uri',$_POST['redirect_uri']);
+			config('one_prefix',$_POST['one_prefix']);
 			return view::direct('?step=2');
 		}
 

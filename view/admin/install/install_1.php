@@ -31,9 +31,16 @@
 
 		<div class="mdui-textfield mdui-textfield-floating-label">
 		   <i class="mdui-icon material-icons">&#xe41a;</i>
+            <label class="mdui-textfield-label">回调地址(redirect_uri)</label>
 		   <input type="text" name="redirect_uri" class="mdui-textfield-input"  value="<?php echo config('redirect_uri');?>"/>
 		   <div class="mdui-textfield-error">重定向URL不能为空</div>
 		</div>
+        <div class="mdui-textfield mdui-textfield-floating-label">
+            <i class="mdui-icon material-icons">&#xe226;</i>
+            <label class="mdui-textfield-label">世纪互联域名前缀(one_prefix)</label>
+            <input type="text" name="one_prefix" class="mdui-textfield-input"  value="<?php echo config('one_prefix');?>"/>
+            <div class="mdui-textfield-error">世纪互联域名前缀不能为空</div>
+        </div>
 		<br>
 	 <a class="mdui-btn mdui-btn-raised mdui-float-left" href="?step=0">上一步</a>
 	 <button class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-float-right" type="submit">下一步</button>

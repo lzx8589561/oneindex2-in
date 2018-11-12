@@ -27,16 +27,7 @@
 		}
 
 		static function get_app_url($token){
-			return "https://vipmail-my.sharepoint.cn/";
-			/*fetch::$headers = "Authorization: bearer {$token}";
-
-			$resp = fetch::get("https://api.office.com/discovery/v2.0/me/services");
-
-			$data = json_decode($resp->content, true);
-			if(!empty($data['value'])){
-				return $data['value'][0]['serviceResourceId'];
-			}
-			return ;*/
+			return "https://".config('one_prefix').".sharepoint.cn/";
 		}
 
 		static function access_token(){
