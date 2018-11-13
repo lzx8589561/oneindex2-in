@@ -159,7 +159,6 @@ class AdminController{
             $app_url = onedrive::get_app_url($data['access_token']);
             config('refresh_token', $data['refresh_token']);
             config('app_url', $app_url);
-            config('@token', $data);
 		}
 		return view::load('install/install_3')->with('refresh_token',$data['refresh_token']);
 
