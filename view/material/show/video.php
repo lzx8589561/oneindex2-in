@@ -29,11 +29,22 @@ const dp = new DPlayer({
     autoplay:true
 });
 
+// 防止出现401 token过期
+dp.on('error',function () {
+    console.log('获取资源错误，开始重新加载！');
+    var last = dp.video.currentTime;
+    dp.video.src = '<?php e($url);?>';
+    dp.video.load();
+    dp.video.currentTime = last;
+    dp.play();
+});
+
 // 如果是播放状态 & 没有播放完 每25分钟重载视频防止卡死
 setInterval(function () {
     if(!dp.video.paused && !dp.video.ended){
         console.log('开始重新加载！');
         var last = dp.video.currentTime;
+        dp.video.src = '<?php e($url);?>';
         dp.video.load();
         dp.video.currentTime = last;
         dp.play();
