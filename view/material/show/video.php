@@ -28,6 +28,17 @@ const dp = new DPlayer({
 	},
     autoplay:true
 });
+
+// 如果是播放状态 & 没有播放完 每25分钟重载视频防止卡死
+setInterval(function () {
+    if(!dp.video.paused && !dp.video.ended){
+        console.log('开始重新加载！');
+        var last = dp.video.currentTime;
+        dp.video.load();
+        dp.video.currentTime = last;
+        dp.play();
+    }
+},1000 * 60 * 25)
 </script>
 <a href="<?php e($url);?>" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a>
 <?php view::end('content');?>
