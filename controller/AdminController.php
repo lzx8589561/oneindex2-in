@@ -56,7 +56,10 @@ class AdminController{
 		}elseif ( !is_null($_POST['refresh']) ){
 			cache::refresh_cache(get_absolute_path(config('onedrive_root')));
 			$message = "重建缓存成功";
-		}
+		}elseif (!is_null($_POST['update'])){
+            cache::refresh_cache(get_absolute_path($_POST['update']),false);
+            $message = "刷新指定路径缓存成功,刷新路径".get_absolute_path($_POST['update']);
+        }
         // 清除php文件缓存
         cache::clear_opcache();
 		return view::load('cache')->with('message', $message);
